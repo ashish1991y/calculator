@@ -1,0 +1,4 @@
+com/hcl/calculator/application/SimpleCalculatorEndpointsTest.class
+com/hcl/calculator/application/SimpleCalculatorValidatorTest.class
+com/hcl/calculator/application/SimpleCalculatorServiceImplTest.class
+com/hcl/calculator/application/SimpleCalculatorDTOTest.class
