@@ -6,15 +6,11 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.server.ResponseStatusException;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest
@@ -36,8 +32,9 @@ public class SimpleCalculatorEndpointsTest {
 
     @Test
     public void testCalculateValue_success() {
-        assertTrue(5d == simpleCalculatorEndpoints.calculateValue(simpleCalculatorDTO));
+        assertEquals(5d, simpleCalculatorEndpoints.calculateValue(simpleCalculatorDTO), 0);
     }
+
     @Test(expected = ResponseStatusException.class)
     public void testCalculateValue_error() {
         when(simpleCalculatorService.performOperation(simpleCalculatorDTO)).thenThrow(SimpleCalculatorException.class);

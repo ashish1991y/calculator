@@ -6,7 +6,9 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
@@ -27,8 +29,8 @@ public class SimpleCalculatorDTOTest {
     @Test
     public void testSimpleCalculatorDTO() throws Exception {
         assertNotNull(new SimpleCalculatorDTO());
-        assertTrue(4d == this.simpleCalculatorDTO.getFirstValue());
-        assertTrue(6d == this.simpleCalculatorDTO.getSecondValue());
-        assertTrue( "plus" == this.simpleCalculatorDTO.getOperator());
+        assertEquals(4d, this.simpleCalculatorDTO.getFirstValue(), 0);
+        assertEquals(6d, this.simpleCalculatorDTO.getSecondValue(), 0);
+        assertEquals("plus", this.simpleCalculatorDTO.getOperator());
     }
 }

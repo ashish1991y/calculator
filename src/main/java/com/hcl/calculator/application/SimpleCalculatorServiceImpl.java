@@ -38,25 +38,20 @@ public class SimpleCalculatorServiceImpl implements SimpleCalculatorService {
     }
 
     private double add(final Double firstValue, final Double secondValue) {
-        final double result = firstValue + secondValue;
-        return result;
+        return firstValue + secondValue;
     }
 
     private double subtract(final Double firstValue, final Double secondValue) {
-        final double result = firstValue - secondValue;
-        return result;
+            return firstValue - secondValue;
     }
 
     private double multiply(final Double firstValue, final Double secondValue) {
-            final double result = firstValue * secondValue;
-            return result;
-
+            return firstValue * secondValue;
     }
 
     private double divide(final Double firstValue, final Double secondValue) {
         if(!simpleCalculatorValidator.isZero(secondValue)) {
-        final double result = firstValue / secondValue;
-        return result;
+        return firstValue / secondValue;
         }else
         {
             throw new SimpleCalculatorException("second value can not be zero for divide operation");
